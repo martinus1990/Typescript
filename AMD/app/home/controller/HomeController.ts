@@ -1,19 +1,18 @@
+/// <reference path="../../../vendor/require.d.ts" />
 import bController = require('../../common/controller/BaseController');
 import bScope = require('../../common/model/BaseScope');
-import angular = require("../../../vendor/angular");
 
-interface IHomeScope extends bScope.BaseScope{
+interface IHomeScope extends bScope{
     message:string
     home:any
 }
 
-export class HomeController extends bController.BaseController{
-    static $inject = ["$scope"];
+export class HomeController extends bController{
     static partialUrl:string = "./home/views/partial.html"
     
     constructor(private $scope: IHomeScope) {
-       super($scope);
-       $scope.home = this;
-    } 
+       super('homeController',$scope);
+       $scope.ctrl = this;
+    }
 }
 

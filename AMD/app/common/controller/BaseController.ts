@@ -1,8 +1,16 @@
-import angular = require('../../../vendor/angular');
+/// <reference path="../../../vendor/angular.d.ts" />
 import bScope = require('../model/BaseScope');
 
+interface IBaseController{
+    ctrlScope:bScope
+    name:string
+}
 
-export class BaseController{
-    constructor(private $scope:bScope.BaseScope) {
+class BaseController implements IBaseController{
+    static $inject:string[] = ['$scope'];
+     constructor(public name:string,public ctrlScope:bScope) {
+
     }
 }
+
+export = BaseController;

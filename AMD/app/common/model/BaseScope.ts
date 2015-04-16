@@ -1,5 +1,6 @@
-import angular = require('../../../vendor/angular');
-
-export interface BaseScope extends angular.ng.IScope {
-
+/// <reference path="../../../vendor/angular.d.ts" />
+interface BaseScope extends ng.IScope {
+    ctrl:any
 }
+
+export = BaseScope;
