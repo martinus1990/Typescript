@@ -1,8 +1,7 @@
-/// <reference path="../../../vendor/angular.d.ts" />
+/// <reference path="../../lib/scripts/angular.d.ts" />
 import bScope = require('../model/BaseScope');
 
 interface IBaseController{
-    ctrlScope:bScope
     name:string
 }
 
